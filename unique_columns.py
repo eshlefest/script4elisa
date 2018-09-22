@@ -31,7 +31,7 @@ if __name__== "__main__":
             entry = tuple([row[header] for header in headers])
             uniques.add(entry)
 
-    output_lines = sorted(list(uniques), key=lambda x:int(x[0]) if x[0] else x[0])
+    output_lines = sorted(list(uniques), key=lambda x:int(x[0]) if x[0].isdigit() else x[0])
     with open(output_file,'w') as handle:
 
         handle.write(','.join(headers)+'\n')
